@@ -7,6 +7,7 @@ import AISkills from './components/AISkills';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Chat from './components/Chat';
 
 type View = 'home' | 'work' | 'contact';
 
@@ -41,6 +42,7 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
+      <Chat />
     </div>
   );
 };
