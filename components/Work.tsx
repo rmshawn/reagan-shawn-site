@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bot, PieChart, Calculator, ArrowUpRight, Code, Sparkles, FileText, Database, TrendingUp } from 'lucide-react';
+import WorkGallery from './WorkGallery';
 
 const Work: React.FC = () => {
   const aiTools = [
@@ -38,15 +39,6 @@ const Work: React.FC = () => {
       icon: <Database size={20} className="text-lime" />,
       image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=800&q=80"
     }
-  ];
-
-  const presentationDecks = [
-    "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1553877615-30c73e656bb3?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
   ];
 
   return (
@@ -96,44 +88,10 @@ const Work: React.FC = () => {
           </div>
         </section>
 
-        {/* Section 2: Presentations & Visualizations */}
-        <section className="mb-32 overflow-hidden">
-          <div className="flex items-center gap-4 mb-12 border-b border-midnight/10 pb-4">
-            <div className="p-3 bg-ochre/10 rounded-xl text-ochre">
-              <PieChart size={24} />
-            </div>
-            <h2 className="font-heading text-3xl font-bold text-midnight">Presentations & Visualizations</h2>
-          </div>
-
-          {/* Overlapping/Scattered Gallery Layout */}
-          <div className="relative h-[500px] w-full flex items-center justify-center overflow-x-auto overflow-y-hidden hide-scrollbar py-10 px-10">
-            <div className="flex items-center min-w-max px-20">
-              {presentationDecks.map((img, idx) => (
-                <div 
-                  key={idx}
-                  className="relative w-[300px] md:w-[400px] aspect-video rounded-xl shadow-2xl transition-all duration-500 ease-out hover:-translate-y-6 hover:scale-105 hover:z-50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-white border-4 border-white cursor-pointer group"
-                  style={{ 
-                    marginLeft: idx === 0 ? 0 : '-120px', // Negative margin for overlap
-                    transform: `rotate(${idx % 2 === 0 ? '2deg' : '-2deg'})`, // Slight rotation for "scattered" look
-                    zIndex: idx
-                  }}
-                >
-                  <img 
-                    src={img} 
-                    alt={`Presentation Deck ${idx + 1}`} 
-                    className="w-full h-full object-cover rounded-lg opacity-90 group-hover:opacity-100 transition-opacity"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-6">
-                    <span className="text-white font-heading font-bold text-lg tracking-wide">View Deck</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="text-center font-serif text-sm text-midnight/40 mt-4 italic">
-            Select a deck to view full presentation
-          </p>
-        </section>
+        {/* Section 2: Presentations & Visualizations (Now powered by your Gallery) */}
+        <div className="mb-32">
+           <WorkGallery />
+        </div>
 
         {/* Section 3: Modeling & Calculators */}
         <section>
