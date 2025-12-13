@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles } from 'lucide-react';
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { SYSTEM_INSTRUCTIONS, INITIAL_GREETING } from '../portfolioData';
 
 const Chat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{role: 'user' | 'model', text: string}[]>([
-    { role: 'model', text: "Hello. I am Reagan's digital twin. Ask me about his experience at Volkswagen, his approach to Value Engineering, or his philosophy on AI." }
-  ]);
+  { role: 'model', text: INITIAL_GREETING }
+]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
@@ -31,29 +32,16 @@ const Chat: React.FC = () => {
 
     try {
       // 1. Setup the Model
-      const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
-
-      // 2. Define the "Persona" (This is the Context!)
-      // Later, we will paste your Transcript into this "systemPrompt" string.
-      const systemPrompt = `
-        You are the digital twin of Reagan Shawn. 
-        You are a Value Engineer and Strategist.
-        Tone: Professional, Insightful, "Minimalist Luxury".
-        
-        Key Background:
-        - Volkswagen: Managed E-Mobility launch, bridging German precision with US markets.
-        - Salesloft: Value Engineer, automating ROI analysis.
-        - Skills: AI Strategy, RAG Architecture, Multi-instrumentalist.
-        
-        Answer strictly as Reagan. Keep answers concise (under 3 sentences unless asked for more).
-      `;
+      const model = genAI.getGenerativeModel({
+        model: "gemini-flash-latest",
+        systemInstruction: SYSTEM_INSTRUCTIONS
+      });
 
       // 3. Send to Gemini
       const result = await model.generateContent([
-        systemPrompt, 
-        ...messages.map(m => m.role === 'user' ? `User: ${m.text}` : `You: ${m.text}`),
-        `User: ${userMessage}`
-      ]);
+  ...messages.map(m => m.role === 'user' ? `User: ${m.text}` : `You: ${m.text}`),
+  `User: ${userMessage}`
+]);
 
       const response = result.response.text();
 

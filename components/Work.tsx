@@ -8,35 +8,42 @@ const Work: React.FC = () => {
       title: "Virtual Value Engineer",
       type: "Custom GPT",
       description: "Ingests customer discovery transcripts to automatically generate Level 1 Business Cases and strategic narratives.",
-      icon: <Bot size={20} className="text-teal" />,
+      icon: <Sparkles size={20} className="text-teal" />,
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Virtual CSM",
+      type: "Custom GPT",
+      description: "Ingests customer call transcripts to generate executive-level narratives for business reviews.",
+      icon: <Sparkles size={20} className="text-teal" />,
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "SE Opportunity Inspector",
-      type: "Automation Tool",
+      type: "Custom GPT",
       description: "Automated analysis of Solution Engineering opportunities to identify technical risks and value gaps before close.",
-      icon: <Sparkles size={20} className="text-ochre" />,
+      icon: <Sparkles size={20} className="text-teal" />,
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "VE Prompt Library",
       type: "Notebook LM",
       description: "Curated prompt engineering architecture designed for Google Notebook LM to accelerate value storytelling.",
-      icon: <FileText size={20} className="text-rose" />,
+      icon: <FileText size={20} className="text-teal" />,
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Transcript Consolidator",
       type: "Apps Script",
       description: "Google Apps Script that aggregates disparate call logs and transcripts into a unified view for analysis.",
-      icon: <Code size={20} className="text-cerulean" />,
+      icon: <Code size={20} className="text-teal" />,
       image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Weekly Activity Tracker",
       type: "Apps Script",
       description: "Automated reporting system for engineering activities, impact tracking, and resource allocation.",
-      icon: <Database size={20} className="text-lime" />,
+      icon: <Database size={20} className="text-teal" />,
       image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=800&q=80"
     }
   ];
