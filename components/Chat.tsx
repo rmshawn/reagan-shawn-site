@@ -5,15 +5,23 @@ import { SYSTEM_INSTRUCTIONS, INITIAL_GREETING } from '../portfolioData';
 
 const Chat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  // We use a Ref for messages to ensure the API always has access to the latest history
+  // even when triggered by an external event listener
   const [messages, setMessages] = useState<{role: 'user' | 'model', text: string}[]>([
-  { role: 'model', text: INITIAL_GREETING }
-]);
+    { role: 'model', text: INITIAL_GREETING }
+  ]);
+  
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
+  
+  // Ref to track messages state inside the event listener closure
+  const messagesRef = useRef(messages);
+  useEffect(() => {
+    messagesRef.current = messages;
+  }, [messages]);
 
   // Initialize Gemini
-  // NOTE: This uses the key you just put in .env.local
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || '');
 
   const scrollToBottom = () => {
@@ -22,12 +30,20 @@ const Chat: React.FC = () => {
 
   useEffect(scrollToBottom, [messages]);
 
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+  // --- UPDATED SEND FUNCTION ---
+  // Now accepts an optional 'manualText' argument.
+  // If manualText is provided, it uses that. If not, it uses the 'input' state.
+  const handleSend = async (manualText?: string) => {
+    const textToSend = typeof manualText === 'string' ? manualText : input;
 
-    const userMessage = input;
-    setInput('');
-    setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
+    if (!textToSend.trim() || isLoading) return;
+
+    // Clear input only if we sent from the input bar
+    if (!manualText) setInput('');
+    
+    // Add User Message to UI
+    const newUserMsg = { role: 'user' as const, text: textToSend };
+    setMessages(prev => [...prev, newUserMsg]);
     setIsLoading(true);
 
     try {
@@ -37,11 +53,17 @@ const Chat: React.FC = () => {
         systemInstruction: SYSTEM_INSTRUCTIONS
       });
 
+      // 2. Prepare History
+      // We use messagesRef.current to ensure we have the latest history + the new message
+      const currentHistory = messagesRef.current.map(m => 
+        m.role === 'user' ? `User: ${m.text}` : `You: ${m.text}`
+      );
+
       // 3. Send to Gemini
       const result = await model.generateContent([
-  ...messages.map(m => m.role === 'user' ? `User: ${m.text}` : `You: ${m.text}`),
-  `User: ${userMessage}`
-]);
+        ...currentHistory,
+        `User: ${textToSend}`
+      ]);
 
       const response = result.response.text();
 
@@ -53,6 +75,26 @@ const Chat: React.FC = () => {
       setIsLoading(false);
     }
   };
+
+  // --- NEW: EVENT LISTENER FOR 'Learn More' BUTTONS ---
+  useEffect(() => {
+    const handleTriggerChat = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      const prompt = customEvent.detail;
+      
+      if (prompt) {
+        setIsOpen(true); // Open the window
+        handleSend(prompt); // Auto-send the message
+      }
+    };
+
+    window.addEventListener('triggerChat', handleTriggerChat);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener('triggerChat', handleTriggerChat);
+    };
+  }, []); // Empty dependency array means this runs once on mount
 
   return (
     <>
@@ -118,7 +160,7 @@ const Chat: React.FC = () => {
                 className="flex-1 bg-cloud/50 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-teal"
               />
               <button 
-                onClick={handleSend}
+                onClick={() => handleSend()}
                 disabled={isLoading}
                 className="bg-teal text-white p-2 rounded-full hover:bg-midnight transition-colors disabled:opacity-50"
               >
