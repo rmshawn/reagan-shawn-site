@@ -3,46 +3,46 @@ import { X, ExternalLink, Maximize2 } from 'lucide-react';
 
 // DATA: Matching your specific filenames from the screenshot
 const PRESENTATIONS = [
-  {
+{
     id: 1,
-    title: "E Solutions: Business Value Assessment",
-    category: "Value Engineering",
+    title: "Manufacturing: Business Value Assessment",
+    category: "Comprehensive Proposal",
     thumbnail: "/e-solutions-bva.jpg", 
     pdfUrl: "/e-solutions-bva.pdf"
   },
   {
     id: 2,
-    title: "Dun & Bradstreet: Strategic POV",
-    category: "GTM Strategy",
-    thumbnail: "/dnb-pov.jpg",
-    pdfUrl: "/dnb-pov.pdf"
+    title: "Data Provider: GTM Strategy Brief",
+    category: "Research Brief",
+    thumbnail: "/dnb-thumb.jpg", // Changed from D&B.jpg to avoid the "&" symbol
+    pdfUrl: "/dun-bradstreet-pov-july-2024.pdf"
   },
   {
     id: 3,
-    title: "OneDigital: Revenue Convergence",
-    category: "Transformation Strategy",
-    thumbnail: "/onedigital-pov.jpg",
-    pdfUrl: "/onedigital-pov.pdf"
+    title: "Employee Benefits: GTM Strategy Brief",
+    category: "Research Brief",
+    thumbnail: "/onedigital-thumb.jpg",
+    pdfUrl: "/onedigital-pov-august-2025.pdf"
   },
   {
     id: 4,
-    title: "Diebold Nixdorf: Partnership Priorities",
-    category: "Enterprise Sales",
-    thumbnail: "/diebold-pov.jpg",
-    pdfUrl: "/diebold-pov.pdf"
+    title: "Manufacturing: GTM Strategy Brief",
+    category: "Research Brief",
+    thumbnail: "/diebold-thumb.jpg",
+    pdfUrl: "/diebold-nixdorf-pov.pdf"
   },
   {
     id: 5,
-    title: "PitchBook: Buyer-Centric GTM",
-    category: "Sales Strategy",
-    thumbnail: "/pitchbook-pov.jpg",
-    pdfUrl: "/pitchbook-pov.pdf"
+    title: "Data Provider: Strategy Proposal",
+    category: "Expanded Research Brief",
+    thumbnail: "/pitchbook-thumb.jpg",
+    pdfUrl: "/pitchbook-pov-october-2024.pdf"
   },
   {
     id: 6,
-    title: "Tata Technologies: Revenue Transformation",
-    category: "Business Transformation",
-    thumbnail: "/tata-technologies-pov.jpg",
+    title: "Manufacturing Supplier: GTM Strategy Brief",
+    category: "Research Brief",
+    thumbnail: "/tata-thumb.jpg",
     pdfUrl: "/tata-technologies-pov.pdf"
   }
 ];
