@@ -1,7 +1,7 @@
 export interface ExperienceItem {
   id: string;
   company: string;
-  role: string;
+  role: string | string[];
   duration: string;
   description: string;
   highlights: string[];

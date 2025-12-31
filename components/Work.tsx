@@ -301,33 +301,33 @@ const Work: React.FC = () => {
                <p className="font-serif text-[#ECEFF1]/60 text-sm mb-8 relative z-10">
                  Comprehensive post-sale framework tracking actualized ROI against pre-sales benchmarks using live platform data.
                </p>
-               <button onClick={() => handleAskBot("I'm interested in the Salesloft Value Realization Model. How does it track ROI?")} className="w-full py-3 border border-white/20 rounded-xl text-white font-heading text-sm font-bold hover:bg-white hover:text-[#1D1F21] transition-colors relative z-10 cursor-pointer">
+               <button onClick={() => handleAskBot("I'm interested in the Salesloft Value Realization Model. How does it track ROI?")} className="w-full py-3 border border-white/20 rounded-xl text-white font-heading text-sm font-bold hover:bg-[#0097A7] transition-colors relative z-10 cursor-pointer">
                  Ask About This
                </button>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white border border-[#1D1F21]/5 shadow-xl rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+            <div className="bg-[#1D1F21] rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                <div className="absolute top-0 right-0 w-32 h-32 bg-[#DDAA44]/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                <Calculator className="text-[#DDAA44] mb-6 relative z-10" size={32} />
-               <h3 className="font-heading text-2xl font-bold text-[#1D1F21] mb-2 relative z-10">Salesloft Business Case Calculator</h3>
-               <p className="font-serif text-[#1D1F21]/60 text-sm mb-8 relative z-10">
+               <h3 className="font-heading text-2xl font-bold text-white mb-2 relative z-10">Salesloft Business Case Calculator</h3>
+               <p className="font-serif text-[#ECEFF1]/60 text-sm mb-8 relative z-10">
                  Dynamic financial modeling tool allowing prospects to toggle variables and visualize 3-year NPV and payback periods.
                </p>
-               <button onClick={() => handleAskBot("How does the Business Case Calculator work and what financial metrics does it output?")} className="w-full py-3 bg-[#1D1F21] text-white rounded-xl font-heading text-sm font-bold hover:bg-[#0097A7] transition-colors relative z-10 cursor-pointer">
+               <button onClick={() => handleAskBot("How does the Business Case Calculator work and what financial metrics does it output?")} className="w-full py-3 border border-white/20 rounded-xl text-white font-heading text-sm font-bold hover:bg-[#0097A7] transition-colors relative z-10 cursor-pointer">
                  Ask About This
                </button>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white border border-[#1D1F21]/5 shadow-xl rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+            <div className="bg-[#1D1F21] rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C76B82]/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                <Database className="text-[#C76B82] mb-6 relative z-10" size={32} />
-               <h3 className="font-heading text-2xl font-bold text-[#1D1F21] mb-2 relative z-10">Salesloft Benefit Register</h3>
-               <p className="font-serif text-[#1D1F21]/60 text-sm mb-8 relative z-10">
+               <h3 className="font-heading text-2xl font-bold text-white mb-2 relative z-10">Salesloft Benefit Register</h3>
+               <p className="font-serif text-[#ECEFF1]/60 text-sm mb-8 relative z-10">
                  A centralized catalog of qualified value drivers, mapped to specific features and customer outcomes.
                </p>
-               <button onClick={() => handleAskBot("What is the Salesloft Benefit Register and how are value drivers qualified?")} className="w-full py-3 border border-[#1D1F21]/10 rounded-xl text-[#1D1F21] font-heading text-sm font-bold hover:bg-[#1D1F21] hover:text-white transition-colors relative z-10 cursor-pointer">
+               <button onClick={() => handleAskBot("What is the Salesloft Benefit Register and how are value drivers qualified?")} className="w-full py-3 border border-white/20 rounded-xl text-white font-heading text-sm font-bold hover:bg-[#0097A7] transition-colors relative z-10 cursor-pointer">
                  Ask About This
                </button>
             </div>

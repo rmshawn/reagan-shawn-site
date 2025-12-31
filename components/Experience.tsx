@@ -6,7 +6,11 @@ const experiences: ExperienceItem[] = [
   {
     id: '1',
     company: 'Salesloft',
-    role: 'Manager, Scaled Value Engineering',
+    role: [
+   'Manager, Scaled Value Engineering', // Current role
+   'Principal Value Engineer',         // Your previous role
+   'Senior Value Engineer'         // Your previous role
+    ],
     duration: '2022 — Present',
     description: 'Leading the evolution of value engineering through automation and strategic narrative architecture.',
     highlights: [
@@ -22,8 +26,13 @@ const experiences: ExperienceItem[] = [
   {
     id: '2',
     company: 'Volkswagen of America',
-    role: 'Senior Product Strategy Specialist (EVs)',
-    duration: '2017 — 2022',
+    role: [
+   'Senior Product Strategy Specialist - Electric Vehicles', // Old role
+   'Electric Mobility Product Planning Specialist',         // Your previous role
+   'National CPO/Used Operations Analyst',         // Your previous role
+   'Dealer Relations Specialist'         // Your previous role
+    ],
+    duration: '2015 — 2022',
     description: 'Spearheading the electric mobility revolution in the North American market.',
     highlights: [
       'Led product planning strategy for the ID.4 launch (40k+ reservations).',
@@ -83,7 +92,19 @@ const Experience: React.FC = () => {
                       {exp.logoInitials}
                     </div>
                     <h3 className="font-heading text-2xl font-bold text-midnight mb-1">{exp.company}</h3>
-                    <p className="font-heading text-teal font-medium mb-4">{exp.role}</p>
+                    <div className="font-heading text-teal font-medium mb-4">
+                      {Array.isArray(exp.role) ? (
+                        // If it's a list (like Salesloft), loop through them
+                          exp.role.map((r, i) => (
+                          <div key={i} className={i === 0 ? "mb-1" : "text-sm opacity-80"}>
+                          {r}
+                          </div>
+                            ))
+                            ) : (
+                            // If it's a single string (like VW), just show it
+                            exp.role
+                            )}
+                    </div>
                     <span className="inline-block px-3 py-1 bg-slate-200 text-midnight/70 rounded-full text-xs font-heading tracking-wide uppercase">
                       {exp.duration}
                     </span>

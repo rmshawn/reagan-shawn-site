@@ -21,34 +21,40 @@ const About: React.FC = () => {
             
             {/* Decorative Element */}
             <div className="absolute -top-6 -right-6 bg-cloud p-6 rounded-xl shadow-lg border border-white/50 hidden md:block">
-              <p className="font-heading text-3xl font-bold text-midnight">7+</p>
-              <p className="font-serif text-sm text-midnight/60">Years of <br/>Strategy</p>
+              <p className="font-heading text-3xl font-bold text-midnight">10+</p>
+              <p className="font-serif text-sm text-midnight/60">Years of <br/>Impact</p>
             </div>
           </div>
 
           {/* Text Side */}
           <div className="order-1 md:order-2">
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-midnight mb-8">
-              From Internal Combustion <br/> to <span className="text-teal">Infinite Scale.</span>
+              Strategy <span className="text-[#0097A7]">→</span> Structure <span className="text-[#0097A7]">→</span> Scale
             </h2>
             
             <div className="space-y-6 font-serif text-midnight/80 text-lg leading-relaxed">
               <p>
-                My professional narrative is defined by a fascination with complex systems. 
-                It began in the high-stakes world of German automotive engineering, where I 
-                supported the launch of Volkswagen’s electric future in North America. There, 
-                precision wasn't just a requirement—it was the currency of trust.
+                I’m drawn to complex systems, especially those that reveal hidden patterns or demand re-thinking.
               </p>
               <p>
-                Today, I translate that rigorous strategic framework into the SaaS landscape at Salesloft. 
-                As a Value Engineer, I don't just calculate ROI; I architect narratives that empower 
-                organizations to see their own potential.
+                My career began in the the Automotive Insdusty, supporting Volkswagen’s electric transition
+                in North America. There, I learned how to drive change in large, multinational organizations
+                through strategic thinking, cross-functional collaboration, and executive communication.
               </p>
               <p>
-                I exist at the intersection of the technical and the human. Whether I'm designing 
-                AI-driven prompt libraries to automate business value analysis or composing music across 
-                multiple instruments, my goal remains the same: <strong>to harmonize disparate elements into a 
-                cohesive, high-performing whole.</strong>
+                When I transitioned into Value Engineering in the Software world, I applied a similar framework: 
+                help leaders of large, complex organizations understand what they need to change, why they need 
+                to change it, and how to make it happen.
+              </p>
+              <p>
+                Through my work in building bespoke strategies for companies, I started to identify patterns,
+                which I codified into scalable tools that enable teams to deliver deeper, more consistent value 
+                conversations, and which enable customers to realize greater impact throughout the value lifecycle.
+              </p>
+              <p>
+                Whether building AI-driven value models or composing music across instruments, I’m driven by the 
+                same desire to <span className="text-[#0097A7]"><strong>constantly learn, apply creativity to topics that matter, and scale the outcomes 
+                into something that delivers compounding value.</strong></span>
               </p>
             </div>
 

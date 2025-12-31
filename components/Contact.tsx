@@ -38,7 +38,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             {/* Left Column: Info */}
             <div>
               <h1 className="font-heading text-5xl md:text-6xl font-bold text-midnight mb-8">
-                Let's Start a <br/><span className="text-teal">Conversation.</span>
+                Let's Start a <br/><span className="text-[#0097A7]">Conversation.</span>
               </h1>
               <p className="font-serif text-xl text-midnight/70 mb-12 leading-relaxed">
                 Whether you're looking to redefine your value strategy, implement AI agents, or just want to talk about electric vehicles—I'd love to hear from you.

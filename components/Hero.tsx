@@ -23,17 +23,16 @@ const Hero: React.FC<HeroProps> = ({ onViewChange }) => {
           {/* Text Content */}
           <div className="lg:w-1/2 max-w-2xl">
             <p className="font-heading text-teal font-semibold tracking-wider uppercase mb-6 animate-float">
-              Manager, Scaled Value Engineering
+              Building strategies, before scaling through systems
             </p>
             <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-midnight leading-[1.1] mb-8">
               Orchestrating <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal to-midnight">
-                Business Value.
+                Value
               </span>
             </h1>
             <p className="font-serif text-lg md:text-xl text-midnight/70 max-w-2xl leading-relaxed mb-12">
-              I bridge the gap between rigorous automotive precision and digital transformation. 
-              Designing systems where human intuition meets artificial intelligence to drive measurable outcomes.
+              I bridge the gap between bespoke strategy formulation and systems, delivering a unique ability to create diverse winning strategies, identify opportunities for scalability, and build custom tools that enable widespread adoption
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
