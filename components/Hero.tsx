@@ -71,11 +71,6 @@ const Hero: React.FC<HeroProps> = ({ onViewChange }) => {
         </div>
       </div>
       
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-30 hover:opacity-100 transition-opacity duration-300">
-        <span className="font-heading text-xs tracking-widest uppercase mb-2">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-midnight to-transparent"></div>
-      </div>
     </section>
   );
 };
